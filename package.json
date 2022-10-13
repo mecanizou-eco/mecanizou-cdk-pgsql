@@ -23,7 +23,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "watch": "tsc -w",
-    "test": "AWS_REGION=sa-east-1 AWS_ACCESS_KEY_ID=something AWS_SECRET_ACCESS_KEY=something jest --config jest.config.json --coverage --passWithNoTests"
+    "test": "AWS_REGION=sa-east-1 AWS_ACCESS_KEY_ID=something AWS_SECRET_ACCESS_KEY=something jest --config jest.config.js --coverage --passWithNoTests"
   },
   "files": [
     "lib/**/*"
