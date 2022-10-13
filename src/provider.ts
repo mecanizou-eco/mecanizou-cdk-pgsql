@@ -99,7 +99,7 @@ export class Provider extends Construct implements iam.IGrantable {
       ? [handlerSecurityGroup]
       : undefined;
     const handler = new lambda.NodejsFunction(scope, "handler", {
-      entry: path.join(__dirname, "handler.ts"),
+      entry: path.join(__dirname, "handler.js"),
       bundling: {
         nodeModules: ["pg", "pg-format"],
       },
