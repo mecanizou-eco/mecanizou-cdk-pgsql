@@ -1,10 +1,10 @@
-# cdk-postgresql
+# cdk-pgsql
 
 [AWS CDK](https://github.com/aws/aws-cdk) constructs for Postgresql
 
 ## Installation
 
-`npm install @botpress/cdk-postgresql` or `yarn add @botpress/cdk-postgresql`
+`npm install mecanizou-cdk-pgsql` or `yarn add mecanizou-cdk-pgsql`
 
 ## Usage
 
@@ -41,7 +41,7 @@ You can reuse the same `Provider` instance when creating your different `Role` a
 ### Database
 
 ```typescript
-import { Database } from "@botpress/cdk-postgresql";
+import { Database } from "mecanizou-cdk-pgsql";
 
 const db = new Database(this, "Database", {
   provider,
@@ -54,7 +54,7 @@ const db = new Database(this, "Database", {
 ### Role
 
 ```typescript
-import { Role } from "@botpress/cdk-postgresql";
+import { Role } from "mecanizou-cdk-pgsql";
 
 const rolePassword: secretsmanager.ISecret;
 const role = new Role(this, "Role", {
