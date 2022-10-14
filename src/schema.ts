@@ -12,7 +12,7 @@ export interface SchemaProps {
   /**
    * The name of the schema. Must be unique on the PostgreSQL server instance where it is configured.
    */
-   name: string;
+  name: string;
 
   /**
    * Policy to apply when the database is removed from this stack.

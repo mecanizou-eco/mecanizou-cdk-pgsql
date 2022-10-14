@@ -95,10 +95,7 @@ export const createSchema = async (props: {
   console.log("Created schema");
 };
 
-export const deleteSchema = async (
-  connection: Connection,
-  name: string,
-) => {
+export const deleteSchema = async (connection: Connection, name: string) => {
   console.log("Deleting schema", name);
   const client = await getConnectedClient(connection);
 

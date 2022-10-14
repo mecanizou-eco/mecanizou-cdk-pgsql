@@ -1,6 +1,6 @@
 {
   "name": "mecanizou-cdk-pgsql",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "AWS CDK Postgresql constructs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
