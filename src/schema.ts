@@ -3,7 +3,7 @@ import { RemovalPolicy } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { Provider } from "./provider";
 
-export interface DatabaseProps {
+export interface SchemaProps {
   /**
    * Provider required to connect to the Postgresql server
    */
@@ -22,8 +22,8 @@ export interface DatabaseProps {
   removalPolicy?: RemovalPolicy;
 }
 
-export class Database extends Construct {
-  constructor(scope: Construct, id: string, props: DatabaseProps) {
+export class Schema extends Construct {
+  constructor(scope: Construct, id: string, props: SchemaProps) {
     super(scope, id);
 
     const { provider, name, removalPolicy } = props;
