@@ -93,12 +93,12 @@ export class Provider extends Construct implements iam.IGrantable {
     this.passwordField = props.passwordField;
 
     const handlerSecurityGroup = vpc
-      ? new ec2.SecurityGroup(this, "HandlerSecurityGroup", { vpc })
+      ? new ec2.SecurityGroup(this, `${id}HandlerSecurityGroup`, { vpc })
       : undefined;
     const handlerSecurityGroups = handlerSecurityGroup
       ? [handlerSecurityGroup]
       : undefined;
-    const handler = new lambda.NodejsFunction(scope, "handler", {
+    const handler = new lambda.NodejsFunction(scope, `${id}-handler`, {
       entry: path.join(__dirname, "handler.js"),
       bundling: {
         nodeModules: ["pg", "pg-format"],
@@ -112,7 +112,7 @@ export class Provider extends Construct implements iam.IGrantable {
 
     this.password.grantRead(handler);
 
-    const provider = new cr.Provider(scope, "cr-provider", {
+    const provider = new cr.Provider(scope, `${id}-cr-provider`, {
       onEventHandler: handler,
       logRetention: logs.RetentionDays.ONE_MONTH,
     });
