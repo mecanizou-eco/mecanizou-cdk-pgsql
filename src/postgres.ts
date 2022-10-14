@@ -45,3 +45,11 @@ export const createDatabase = async (props: {
 
   return client.query(format("CREATE DATABASE %I WITH OWNER %I", name, owner));
 };
+
+export const createSchema = async (props: {
+  client: Client;
+  name: string;
+}) => {
+  const { client, name } = props;
+  return client.query(format("CREATE SCHEMA IF NOT EXISTS %I", name));
+};
